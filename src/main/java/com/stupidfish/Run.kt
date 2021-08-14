@@ -10,6 +10,9 @@ class Run {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
+            run(args)
+        }
+        fun run(args: Array<String>){
             if (args.size == 1) {
                 try {
 
