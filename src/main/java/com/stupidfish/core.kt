@@ -17,6 +17,9 @@ class core {
                     val file = File(args[0])
                     val lines = file.readLines()
                     println("${Color.TEXT_GREEN} 读取完毕")
+                    for (i in 0..2) {
+                        println("QQ:${lines[i].split(" ")[0]} 激活码:${lines[i].split(" ")[1]}")
+                    }
                     println("${Color.TEXT_GREEN} 正在展示前三个 请手动确认发送${Color.TEXT_BLUE}(y/n)")
                     val confirm = readLine()
                     when (confirm) {
@@ -29,10 +32,8 @@ class core {
                             exitProcess(1)
                         }
                     }
-                    for (i in 0..2) {
-                        println("QQ:${lines[i][0]} 激活码:${lines[i][1]}")
-                    }
 
+                    
                     //GlobalScope.launch {//开协程跑 防止卡顿
                     lines.forEach { it ->
                         //it为行String
